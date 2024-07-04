@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetCraft - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles can be placed here if needed */
+        /* Styles from styles.css and additional styles as needed */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #ff6f61;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        button {
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 1em 2em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #e2584d;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#server">Server Info</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#discord">Discord</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Welcome to SweetCraft</h1>
+            <p>The sweetest Minecraft server experience!</p>
+            <button onclick="scrollToSection('#about')">Learn More</button>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Learn more about SweetCraft and our community.</p>
+        </section>
+
+        <section id="server">
+            <h2>Server Information</h2>
+            <p>IP: SOON</p>
+            <p>SweetCraft is completely free to play!</p>
+        </section>
+
+        <section id="news">
+            <h2>News & Updates</h2>
+            <div id="news-updates"></div>
+        </section>
+
+        <section id="discord">
+            <h2>Discord</h2>
+            <p>Join our discord server!</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="button" onclick="sendEmail()">Send</button>
+            </form>
+            <p id="message-sent" style="display: none;">Your message has been successfully sent!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SweetCraft. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function scrollToSection(section) {
+            $('html, body').animate({
+                scrollTop: $(section).offset().top - 50
+            }, 800);
+        }
+
+        function sendEmail() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            // Simulate sending email (replace with actual AJAX call in production)
+            console.log(`Sending email to sweetcraftreal@gmail.com:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+
+            // Simulate success message
+            $('#message-sent').fadeIn().delay(3000).fadeOut();
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+</body>
+</html>
+
